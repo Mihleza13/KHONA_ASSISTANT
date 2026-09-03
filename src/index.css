@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --khona-bg: #090d14;
+    --khona-card: #101722;
+    --khona-card-subtle: #162030;
+    --khona-border: #222e40;
+    --khona-text: #f8fafc;
+    --khona-text-muted: #94a3b8;
+    --khona-cyan: #06b6d4;
+    --khona-cyan-hover: #22d3ee;
+    --khona-cyan-glow: rgba(6, 182, 212, 0.25);
+  }
+
+  html.dark {
+    --khona-bg: #090d14;
+    --khona-card: #101722;
+    --khona-card-subtle: #162030;
+    --khona-border: #222e40;
+    --khona-text: #f8fafc;
+    --khona-text-muted: #94a3b8;
+    --khona-cyan: #06b6d4;
+    --khona-cyan-hover: #22d3ee;
+  }
+
+  html:not(.dark) {
+    --khona-bg: #f8fafc;
+    --khona-card: #ffffff;
+    --khona-card-subtle: #f1f5f9;
+    --khona-border: #e2e8f0;
+    --khona-text: #090d14;
+    --khona-text-muted: #64748b;
+    --khona-cyan: #0891b2;
+    --khona-cyan-hover: #06b6d4;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--khona-bg);
+    color: var(--khona-text);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--khona-cyan);
+    outline-offset: 2px;
+  }
+}
+
+.font-sans {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.5);
+}

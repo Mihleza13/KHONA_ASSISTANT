@@ -1,0 +1,6 @@
+{
+  "name": "KHONA",
+  "description": "Sign. Translate. Understand. South African Sign Language (SASL) communication kiosk for healthcare environments.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
