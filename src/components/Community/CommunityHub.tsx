@@ -121,9 +121,13 @@ export const CommunityHub: React.FC<CommunityHubProps> = ({
             <button
               type="button"
               onClick={onProceedToClinicSession}
-              className="px-3.5 py-2 rounded-full bg-zinc-950 dark:bg-white hover:opacity-90 text-white dark:text-zinc-950 font-semibold text-xs flex items-center gap-1.5 cursor-pointer transition-all active:scale-95 shrink-0"
+              className={`px-3.5 py-2 rounded-full border-2 font-semibold text-xs flex items-center gap-1.5 cursor-pointer transition-all active:scale-95 shrink-0 ${
+                isDark
+                  ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+                  : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
+              }`}
             >
-              <Stethoscope className="w-3.5 h-3.5 text-cyan-400 dark:text-cyan-600" />
+              <Stethoscope className="w-3.5 h-3.5 text-cyan-500" />
               <span className="hidden sm:inline">Continue to clinic</span>
               <span className="sm:hidden">Clinic</span>
             </button>
@@ -138,10 +142,10 @@ export const CommunityHub: React.FC<CommunityHubProps> = ({
             id="pillar-tab-regional"
             type="button"
             onClick={() => setActivePillar('regional')}
-            className={`px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer border ${
               activePillar === 'regional'
-                ? isDark ? 'bg-white text-zinc-950' : 'bg-zinc-950 text-white'
-                : isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-500 hover:text-zinc-900'
+                ? isDark ? 'bg-[#0b0e13] border-cyan-500/60 text-white' : 'bg-white border-cyan-500 text-zinc-900'
+                : 'border-transparent ' + (isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-500 hover:text-zinc-900')
             }`}
           >
             <Hand className="w-3.5 h-3.5" />
@@ -152,10 +156,10 @@ export const CommunityHub: React.FC<CommunityHubProps> = ({
             id="pillar-tab-healthcare"
             type="button"
             onClick={() => setActivePillar('healthcare')}
-            className={`px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer border ${
               activePillar === 'healthcare'
-                ? isDark ? 'bg-white text-zinc-950' : 'bg-zinc-950 text-white'
-                : isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-500 hover:text-zinc-900'
+                ? isDark ? 'bg-[#0b0e13] border-cyan-500/60 text-white' : 'bg-white border-cyan-500 text-zinc-900'
+                : 'border-transparent ' + (isDark ? 'text-zinc-400 hover:text-white' : 'text-zinc-500 hover:text-zinc-900')
             }`}
           >
             <Building2 className="w-3.5 h-3.5" />

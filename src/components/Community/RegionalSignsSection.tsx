@@ -136,9 +136,13 @@ export const RegionalSignsSection: React.FC<RegionalSignsSectionProps> = ({
           id="btn-submit-sign"
           type="button"
           onClick={() => setIsSubmitModalOpen(true)}
-          className="px-4 py-2.5 rounded-xl bg-zinc-950 dark:bg-white hover:opacity-90 text-white dark:text-zinc-950 font-semibold text-xs transition-all flex items-center gap-2 cursor-pointer active:scale-95"
+          className={`px-4 py-2.5 rounded-xl border-2 font-semibold text-xs transition-all flex items-center gap-2 cursor-pointer active:scale-95 ${
+            isDark
+              ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+              : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
+          }`}
         >
-          <Plus className="w-4 h-4 text-cyan-400 dark:text-cyan-600" />
+          <Plus className="w-4 h-4 text-cyan-500" />
           <span>Add sign</span>
         </button>
       </div>

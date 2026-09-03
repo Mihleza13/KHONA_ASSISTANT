@@ -247,7 +247,11 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
               {/* Continue Button */}
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-2xl bg-zinc-950 dark:bg-white hover:opacity-90 text-white dark:text-zinc-950 font-semibold text-sm transition-all duration-150 cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] mt-2"
+                className={`w-full py-3.5 rounded-2xl border-2 font-semibold text-sm transition-all duration-150 cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] mt-2 ${
+                  isDark
+                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
+                }`}
               >
                 <span>Continue</span>
                 <ArrowRight className="w-4 h-4" />
@@ -370,7 +374,11 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
 
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-xl bg-zinc-950 dark:bg-white hover:opacity-90 text-white dark:text-zinc-950 font-semibold text-xs transition-all cursor-pointer"
+                  className={`px-5 py-2.5 rounded-xl border-2 font-semibold text-xs transition-all cursor-pointer ${
+                  isDark
+                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
+                }`}
                 >
                   Create record
                 </button>
@@ -389,7 +397,9 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
               isDark ? 'bg-zinc-900/80 border-zinc-800' : 'bg-zinc-50 border-zinc-200'
             }`}>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-zinc-950 dark:bg-white text-cyan-400 dark:text-cyan-600 flex items-center justify-center font-bold">
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold ${
+                  isDark ? 'bg-zinc-800 text-cyan-400' : 'bg-zinc-100 text-cyan-600'
+                }`}>
                   <User className="w-5 h-5" />
                 </div>
                 <div>
@@ -445,7 +455,11 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
               <button
                 type="button"
                 onClick={handleLaunchConsultation}
-                className="px-6 py-3.5 rounded-2xl bg-zinc-950 dark:bg-white hover:opacity-90 text-white dark:text-zinc-950 font-semibold text-sm transition-all duration-150 flex items-center gap-2 cursor-pointer active:scale-[0.98]"
+                className={`px-6 py-3.5 rounded-2xl border-2 font-semibold text-sm transition-all duration-150 flex items-center gap-2 cursor-pointer active:scale-[0.98] ${
+                  isDark
+                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
+                }`}
               >
                 <Stethoscope className="w-4 h-4" />
                 <span>Start consultation</span>
@@ -551,7 +565,11 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
 
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-xl bg-zinc-950 dark:bg-white hover:opacity-90 text-white dark:text-zinc-950 font-semibold text-xs transition-all cursor-pointer"
+                  className={`px-5 py-2.5 rounded-xl border-2 font-semibold text-xs transition-all cursor-pointer ${
+                  isDark
+                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
+                }`}
                 >
                   Save profile
                 </button>

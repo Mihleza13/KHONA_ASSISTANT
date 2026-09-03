@@ -115,16 +115,16 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             type="button"
             id="welcome-btn-community"
             onClick={() => handleCommunityClick?.()}
-            className={`w-full group rounded-2xl p-4 border transition-all duration-150 cursor-pointer flex items-center justify-between gap-4 active:scale-[0.99] ${
+            className={`w-full group rounded-2xl p-4 border-2 transition-all duration-150 cursor-pointer flex items-center justify-between gap-4 active:scale-[0.99] ${
               isDark
-                ? 'bg-[#12161d] hover:bg-[#171c25] border-zinc-800 text-white'
-                : 'bg-white hover:bg-zinc-50 border-zinc-200 text-zinc-900'
+                ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
+                : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
             }`}
           >
             <div className="flex items-center gap-3.5">
               <div
                 className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-                  isDark ? 'bg-zinc-900 text-cyan-400' : 'bg-zinc-100 text-zinc-700'
+                  isDark ? 'bg-zinc-900 text-cyan-400' : 'bg-zinc-100 text-cyan-600'
                 }`}
               >
                 <Users className="w-4.5 h-4.5" />

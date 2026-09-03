@@ -15,6 +15,7 @@ import {
   Minus,
   CheckCircle2,
   User,
+  MessageSquare,
   Stethoscope,
   X,
   Sparkles,
@@ -476,8 +477,8 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
       {/* 1. Header Toolbar (Minimal Chrome) */}
       <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-slate-200/80">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-sky-500 text-white flex items-center justify-center font-bold shadow-xs">
-            <User className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-zinc-100 text-cyan-600 flex items-center justify-center font-bold shadow-xs">
+            <MessageSquare className="w-5 h-5" />
           </div>
           <div>
             <h1 className="text-xl font-extrabold text-slate-900 leading-tight">
@@ -670,7 +671,7 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
         <div className="lg:col-span-5 flex flex-col space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold shadow-xs">
+              <div className="w-8 h-8 rounded-xl bg-zinc-100 text-cyan-600 flex items-center justify-center font-bold shadow-xs">
                 <Stethoscope className="w-4 h-4" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 leading-tight">
@@ -696,20 +697,20 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
           </div>
 
           {/* LARGE PATIENT READING DISPLAY (High contrast) */}
-          <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-7 min-h-[160px] flex flex-col justify-center shadow-lg border-2 border-slate-800">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-teal-400 font-bold mb-2 block">
-              Patient Reads Here:
+          <div className="bg-white rounded-3xl p-6 sm:p-7 min-h-[160px] flex flex-col justify-center shadow-sm border border-slate-200">
+            <span className="text-xs font-medium text-cyan-600 mb-2 block">
+              Patient reads here
             </span>
 
             {latestHealthcareMessage ? (
               <p 
                 style={{ fontSize: `${patientTextSize}px`, lineHeight: 1.3 }}
-                className="font-extrabold text-teal-200 font-sans tracking-tight"
+                className="font-semibold text-slate-900 font-sans tracking-tight"
               >
                 &ldquo;{latestHealthcareMessage}&rdquo;
               </p>
             ) : (
-              <p className="text-base text-slate-400 italic">
+              <p className="text-base text-slate-400">
                 {isListening ? 'Listening to speech...' : 'Press microphone or tap a phrase below.'}
               </p>
             )}
@@ -724,7 +725,7 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
                 className={`flex-1 py-4 px-5 rounded-2xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-md transition-all active:scale-95 cursor-pointer ${
                   isListening
                     ? 'bg-rose-600 hover:bg-rose-700 text-white animate-pulse'
-                    : 'bg-teal-600 hover:bg-teal-700 text-white'
+                    : 'bg-cyan-500 hover:bg-cyan-400 text-zinc-950'
                 }`}
               >
                 {isListening ? (
@@ -791,7 +792,7 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
             <button
               type="submit"
               disabled={!manualInputText.trim()}
-              className="px-4 py-3 rounded-2xl bg-slate-900 hover:bg-teal-700 disabled:opacity-40 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-4 py-3 rounded-2xl bg-white hover:bg-zinc-50 disabled:opacity-40 border-2 border-cyan-500 text-zinc-900 font-semibold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               <Send className="w-4 h-4" />
             </button>
