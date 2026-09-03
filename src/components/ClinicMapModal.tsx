@@ -58,8 +58,9 @@ export const ClinicMapModal: React.FC<ClinicMapModalProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-      <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-slate-200 shadow-2xl p-6 sm:p-8 space-y-6">
+    <div className="khona-backdrop-in fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/70 backdrop-blur-xs">
+      <div className="khona-pop-in bg-white rounded-t-[28px] sm:rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto border-2 border-slate-200 shadow-2xl p-6 sm:p-8 space-y-6">
+        <div className="khona-sheet-handle sm:hidden -mt-2 mb-1" />
         {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
           <div>

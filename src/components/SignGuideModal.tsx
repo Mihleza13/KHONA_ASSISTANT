@@ -22,8 +22,9 @@ export const SignGuideModal: React.FC<SignGuideModalProps> = ({ isOpen, onClose 
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs">
-      <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-slate-200 shadow-2xl p-6 sm:p-8 space-y-6">
+    <div className="khona-backdrop-in fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/70 backdrop-blur-xs">
+      <div className="khona-pop-in bg-white rounded-t-[28px] sm:rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto border-2 border-slate-200 shadow-2xl p-6 sm:p-8 space-y-6">
+        <div className="khona-sheet-handle sm:hidden -mt-2 mb-1" />
         {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
           <div className="flex items-center gap-3">
@@ -55,13 +56,13 @@ export const SignGuideModal: React.FC<SignGuideModalProps> = ({ isOpen, onClose 
 
         {/* Search Bar */}
         <div className="relative">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 z-10" />
           <input
             type="text"
             placeholder={t.signGuide.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+            className="khona-input-pill !pl-10 !bg-slate-50 !border-slate-200 focus:!bg-white"
           />
         </div>
 

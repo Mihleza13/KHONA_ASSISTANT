@@ -22,14 +22,15 @@ export const AppearanceSettingsModal: React.FC<AppearanceSettingsModalProps> = (
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-150">
+    <div className="khona-backdrop-in fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/70 backdrop-blur-sm">
       <div 
-        className={`w-full max-w-sm rounded-2xl p-5 sm:p-6 shadow-2xl border transition-all ${
+        className={`khona-pop-in w-full max-w-sm rounded-t-[28px] sm:rounded-2xl p-5 sm:p-6 shadow-2xl border transition-all ${
           isDark 
             ? 'bg-[#0e141f] border-zinc-800 text-white' 
             : 'bg-white border-zinc-200 text-zinc-900 shadow-xl'
         }`}
       >
+        <div className="khona-sheet-handle sm:hidden -mt-1 mb-3" />
         <div className="flex items-center justify-between pb-4 border-b border-zinc-700/30">
           <div className="flex items-center gap-2.5">
             <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${
@@ -62,7 +63,7 @@ export const AppearanceSettingsModal: React.FC<AppearanceSettingsModalProps> = (
                 type="button"
                 id={`theme-option-${item.id}`}
                 onClick={() => setThemeMode(item.id)}
-                className={`w-full flex items-center justify-between p-3.5 rounded-xl border transition-all cursor-pointer ${
+                className={`w-full flex items-center justify-between p-3.5 rounded-2xl border-2 transition-all cursor-pointer active:scale-[0.98] ${
                   isSelected
                     ? isDark
                       ? 'bg-cyan-500/15 border-cyan-500 text-cyan-300 font-semibold'
@@ -91,12 +92,12 @@ export const AppearanceSettingsModal: React.FC<AppearanceSettingsModalProps> = (
           })}
         </div>
 
-        <div className="mt-6 flex justify-end">
+        <div className="mt-6">
           <button
             type="button"
             id="done-settings-modal"
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            className="khona-btn-primary"
           >
             Done
           </button>

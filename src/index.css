@@ -35,6 +35,13 @@
     --khona-cyan-hover: #06b6d4;
   }
 
+  :root {
+    /* Vivid accent gradient used for primary "pop" actions & pills */
+    --khona-accent-grad: linear-gradient(120deg, #06b6d4 0%, #3b82f6 100%);
+    --khona-accent-grad-hover: linear-gradient(120deg, #22d3ee 0%, #60a5fa 100%);
+    --khona-accent-glow: rgba(37, 150, 220, 0.35);
+  }
+
   body {
     margin: 0;
     background-color: var(--khona-bg);
@@ -78,4 +85,180 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 182, 212, 0.5);
+}
+
+/* =========================================================================
+   SEAMLESS FLOW & POP-OUT MOTION SYSTEM
+   Smooth entrance animation for modals / bottom sheets + a shared
+   pill-button / chip / pill-input design language (cyan → blue accent).
+   ========================================================================= */
+
+@keyframes khonaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes khonaPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes khonaSheetUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes khonaChipIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.khona-backdrop-in {
+  animation: khonaFadeIn 0.18s ease-out both;
+}
+
+.khona-pop-in {
+  animation: khonaPopIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.khona-sheet-in {
+  animation: khonaSheetUp 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.khona-chip-in {
+  animation: khonaChipIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Drag handle shown at the top of bottom-sheet style pop-outs */
+.khona-sheet-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--khona-border);
+  margin: 0 auto;
+}
+
+/* Primary "pop" action — pill-shaped, gradient fill, soft glow.
+   This is the seamless equivalent of the Continue / Create trip button. */
+.khona-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: var(--khona-accent-grad);
+  box-shadow: 0 8px 24px -6px var(--khona-accent-glow), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  cursor: pointer;
+}
+
+.khona-btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 10px 28px -6px var(--khona-accent-glow), 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.khona-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.khona-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+/* Secondary pill — soft, outlined, same rounded family as primary */
+.khona-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1.5px solid var(--khona-border);
+  background: var(--khona-card);
+  color: var(--khona-text);
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.khona-btn-secondary:hover {
+  border-color: var(--khona-cyan);
+}
+
+.khona-btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Fully-rounded "search bar" style input, like a destination search field */
+.khona-input-pill {
+  width: 100%;
+  border-radius: 999px;
+  border: 1.5px solid var(--khona-border);
+  background: var(--khona-card-subtle);
+  color: var(--khona-text);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.khona-input-pill:focus {
+  outline: none;
+  border-color: var(--khona-cyan);
+  box-shadow: 0 0 0 4px var(--khona-accent-glow);
+}
+
+/* Small rounded chip — selected destination / tag / filter style */
+.khona-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1.5px solid var(--khona-border);
+  background: var(--khona-card);
+  color: var(--khona-text);
+  white-space: nowrap;
+}
+
+.khona-chip-accent {
+  border-color: transparent;
+  background: var(--khona-accent-grad);
+  color: #ffffff;
+}
+
+/* Bold, tight editorial heading style matching the reference flow */
+.khona-heading {
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }

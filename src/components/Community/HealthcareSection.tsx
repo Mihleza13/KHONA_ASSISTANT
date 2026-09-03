@@ -175,8 +175,8 @@ export const HealthcareSection: React.FC = () => {
 
       {/* Event Details Bottom Sheet / Modal */}
       {selectedEvent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
-          <div className={`w-full max-w-lg rounded-2xl overflow-hidden border ${
+        <div className="khona-backdrop-in fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-sm">
+          <div className={`khona-pop-in w-full max-w-lg rounded-t-[28px] sm:rounded-2xl overflow-hidden border ${
             isDark ? 'bg-[#0e141f] border-zinc-800 text-white' : 'bg-white border-zinc-200 text-zinc-900'
           }`}>
             <div className="relative aspect-16/9 w-full bg-zinc-900">

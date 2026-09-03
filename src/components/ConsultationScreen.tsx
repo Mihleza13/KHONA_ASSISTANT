@@ -722,10 +722,10 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
               <button
                 type="button"
                 onClick={handleToggleListening}
-                className={`flex-1 py-4 px-5 rounded-2xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-md transition-all active:scale-95 cursor-pointer ${
+                className={`flex-1 py-4 px-5 rounded-full font-extrabold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all active:scale-95 cursor-pointer ${
                   isListening
-                    ? 'bg-rose-600 hover:bg-rose-700 text-white animate-pulse'
-                    : 'bg-cyan-500 hover:bg-cyan-400 text-zinc-950'
+                    ? 'bg-rose-600 hover:bg-rose-700 text-white animate-pulse shadow-md'
+                    : 'khona-btn-primary !w-auto flex-1'
                 }`}
               >
                 {isListening ? (
@@ -772,7 +772,7 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
                   key={phrase}
                   type="button"
                   onClick={() => handleSendQuickPhrase(phrase)}
-                  className="px-3 py-2 rounded-xl bg-slate-100 hover:bg-teal-50 hover:text-teal-900 border border-slate-200 text-slate-800 text-xs font-semibold transition-colors cursor-pointer text-left"
+                  className="khona-chip-in px-3 py-2 rounded-full bg-slate-100 hover:bg-teal-50 hover:text-teal-900 hover:border-teal-300 border border-slate-200 text-slate-800 text-xs font-semibold transition-colors cursor-pointer text-left"
                 >
                   {phrase}
                 </button>
@@ -787,12 +787,12 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
               value={manualInputText}
               onChange={(e) => setManualInputText(e.target.value)}
               placeholder="Or type a message here..."
-              className="flex-1 px-4 py-3 rounded-2xl border border-slate-300 bg-slate-50 focus:bg-white text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className="khona-input-pill flex-1 !bg-slate-50 !border-slate-300 focus:!bg-white"
             />
             <button
               type="submit"
               disabled={!manualInputText.trim()}
-              className="px-4 py-3 rounded-2xl bg-white hover:bg-zinc-50 disabled:opacity-40 border-2 border-cyan-500 text-zinc-900 font-semibold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-4 py-3 rounded-full bg-white hover:bg-zinc-50 disabled:opacity-40 border-2 border-cyan-500 text-zinc-900 font-semibold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer active:scale-95"
             >
               <Send className="w-4 h-4" />
             </button>
@@ -864,8 +864,9 @@ export const ConsultationScreen: React.FC<ConsultationScreenProps> = ({
 
       {/* 4. End Session Confirmation Modal */}
       {showEndSessionModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4">
-          <div className="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border-2 border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+        <div className="khona-backdrop-in fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-950/70 backdrop-blur-xs p-0 sm:p-4">
+          <div className="khona-pop-in bg-white rounded-t-[28px] sm:rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border-2 border-slate-200 space-y-5">
+            <div className="khona-sheet-handle sm:hidden -mt-2 mb-1" />
             <div className="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center font-bold">
               <Trash2 className="w-6 h-6" />
             </div>

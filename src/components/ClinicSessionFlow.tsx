@@ -218,7 +218,7 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
                   Patient folder number or phone
                 </label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500" />
+                  <Lock className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 z-10" />
                   <input
                     type="text"
                     required
@@ -228,10 +228,10 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
                       setIdentifierInput(e.target.value);
                       if (authError) setAuthError(null);
                     }}
-                    className={`w-full pl-10 pr-4 py-3 rounded-2xl border text-sm font-medium focus:outline-none transition-colors ${
+                    className={`khona-input-pill !pl-10 ${
                       isDark 
-                        ? 'bg-zinc-900 border-zinc-800 text-white placeholder-zinc-500 focus:border-cyan-500' 
-                        : 'bg-zinc-50 border-zinc-200 text-zinc-900 placeholder-zinc-400 focus:border-cyan-500'
+                        ? '!bg-zinc-900 !border-zinc-800 !text-white placeholder-zinc-500' 
+                        : '!bg-zinc-50 !border-zinc-200 !text-zinc-900 placeholder-zinc-400'
                     }`}
                   />
                 </div>
@@ -247,11 +247,7 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
               {/* Continue Button */}
               <button
                 type="submit"
-                className={`w-full py-3.5 rounded-2xl border-2 font-semibold text-sm transition-all duration-150 cursor-pointer flex items-center justify-center gap-2 active:scale-[0.99] mt-2 ${
-                  isDark
-                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
-                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
-                }`}
+                className="khona-btn-primary mt-2"
               >
                 <span>Continue</span>
                 <ArrowRight className="w-4 h-4" />
@@ -374,11 +370,7 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
 
                 <button
                   type="submit"
-                  className={`px-5 py-2.5 rounded-xl border-2 font-semibold text-xs transition-all cursor-pointer ${
-                  isDark
-                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
-                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
-                }`}
+                  className="khona-btn-primary !w-auto px-6 py-3 text-xs"
                 >
                   Create record
                 </button>
@@ -455,11 +447,7 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
               <button
                 type="button"
                 onClick={handleLaunchConsultation}
-                className={`px-6 py-3.5 rounded-2xl border-2 font-semibold text-sm transition-all duration-150 flex items-center gap-2 cursor-pointer active:scale-[0.98] ${
-                  isDark
-                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
-                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
-                }`}
+                className="khona-btn-primary !w-auto px-6"
               >
                 <Stethoscope className="w-4 h-4" />
                 <span>Start consultation</span>
@@ -565,11 +553,7 @@ export const ClinicSessionFlow: React.FC<ClinicSessionFlowProps> = ({
 
                 <button
                   type="submit"
-                  className={`px-5 py-2.5 rounded-xl border-2 font-semibold text-xs transition-all cursor-pointer ${
-                  isDark
-                    ? 'bg-[#12161d] hover:bg-[#171c25] border-cyan-500/60 text-white'
-                    : 'bg-white hover:bg-zinc-50 border-cyan-500 text-zinc-900'
-                }`}
+                  className="khona-btn-primary !w-auto px-6 py-3 text-xs"
                 >
                   Save profile
                 </button>

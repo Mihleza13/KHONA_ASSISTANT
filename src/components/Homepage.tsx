@@ -45,7 +45,7 @@ export const Homepage: React.FC<HomepageProps> = ({
     <div className="w-full max-w-md mx-auto px-5 py-6 pb-28 md:pb-12 animate-in fade-in duration-200">
       {/* Greeting */}
       <div className="mb-5">
-        <h1 className="text-[26px] font-semibold tracking-tight leading-tight">
+        <h1 className="khona-heading text-[26px] leading-tight">
           Hi {firstName}
         </h1>
         <p className="text-xs text-zinc-500 font-normal mt-0.5">

@@ -114,12 +114,13 @@ export const SubmitSignModal: React.FC<SubmitSignModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
+    <div className="khona-backdrop-in fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-sm">
       <div 
-        className={`w-full max-w-lg rounded-2xl p-6 border shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-150 ${
+        className={`khona-pop-in w-full max-w-lg rounded-t-[28px] sm:rounded-2xl p-6 border shadow-2xl space-y-4 max-h-[92vh] overflow-y-auto ${
           isDark ? 'bg-[#0e141f] border-zinc-800 text-white' : 'bg-white border-zinc-200 text-zinc-900'
         }`}
       >
+        <div className="khona-sheet-handle sm:hidden -mt-1 mb-1" />
         <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
           <div className="flex items-center gap-2">
             <Plus className="w-5 h-5 text-cyan-400" />
